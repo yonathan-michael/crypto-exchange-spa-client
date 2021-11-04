@@ -4,14 +4,10 @@ import React from "react";
 import axios from "axios";
 
 const api = axios.create({
-	baseURL: "http://localhost:8080",
+	baseURL: "https://crypto-exchange-server.herokuapp.com/",
 });
 
 export default class App extends React.Component {
-	constructor() {
-		super();
-	}
-
 	state = {
 		coin: "BTC",
 		bitcoin_prices: {
