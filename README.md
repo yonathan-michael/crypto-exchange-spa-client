@@ -1,12 +1,14 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+# React Single Page Application Client
 
 In the project directory, you can run:
 
-### `npm start`
+### 'Live Version'
+
+https://crypto-exchange-spa-react.herokuapp.com/
+
+It is connected to a node-js/express backend that fetches the market data from Binance and Kucoin external API's.
+
+### `npm run start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,57 +16,28 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### Questionnaire
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Are there any sub-optimal choices( or short cuts taken due to limited time ) in your implementation?
 
-### `npm run build`
+Generally speaking, I would have focused more on a clear design pattern of the front-end. I would have spent more time thinking about component separation. This would make it easier for me to advance the project over time. Unfortunately any major enhancements to the project would require refactoring a majority of the code.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In addition, I am not sure conditional rendering is handled in the best way for performance. Conditional rendering was implemented using immediately invoked function expressions (IIFEs). I chose this because it was easier to implement. Given more time, I would research if there is a better way to implement this from a performance standpoint.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Is any part of it over-designed? ( It is fine to over-design to showcase your skills as long as you are clear about it)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This implementation is a fairly simple solution to meet the requirements. I don't believe it is over-designed; however, the entire project probably could have been implemented in one directory.
 
-### `npm run eject`
+For the purpose of displaying external data, a thick-client could have maintained state and directly interacted with external API's. Technically, there was no need for a back-end API in between client and external API's.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### If you have to scale your solution to 100 users/second traffic what changes would you make, if any?
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+For this project, I would look into a cloud-based solution to provide essentially two scalability enhancements. Implementing redundancy by duplicating the node-js/express server to a number of instances that can handle the traffic. In addition, implementing a load-balancer to sit infront of the servers. The cloud services provider should have an autoscaling ability that will automatically increase the number of server instances based on traffic levels.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### What are some other enhancements you would have made, if you had more time to do this implementation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+There are two major enhancements that I would make.
 
-## Learn More
+1. I would look into another form of communication between the components. Two technologies that come to mind are Web Sockets or Server-Sent Events implementations. I would want to establish a persistent connection between the components and allow for continues updates of the coin price in real-time.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. I would look into connecting users to their accounts on the exchanges and giving them ability to quickly buy or sell at that price in that exact moment.
