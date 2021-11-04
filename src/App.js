@@ -10,9 +10,6 @@ const api = axios.create({
 export default class App extends React.Component {
 	constructor() {
 		super();
-		api.get("/bitcoin").then((res) => {
-			this.state = { ...this.state, bitcoin_prices: res.data };
-		});
 	}
 
 	state = {
@@ -64,18 +61,18 @@ export default class App extends React.Component {
 						ethereum_prices={this.state.ethereum_prices}
 					/>
 				</div>
-				<div>
+				<div className="d-flex justify-content-center">
 					<button
 						onClick={this.setBitcoin}
 						type="button"
-						className="btn btn-primary float-right"
+						className="btn btn-primary m-5"
 					>
 						Bitcoin!
 					</button>
 					<button
 						onClick={this.setEthereum}
 						type="button"
-						className="btn btn-warning float-right"
+						className="btn btn-warning m-5"
 					>
 						Ethereum!
 					</button>

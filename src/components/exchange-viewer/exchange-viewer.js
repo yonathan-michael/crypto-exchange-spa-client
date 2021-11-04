@@ -8,15 +8,15 @@ function ExchangeViewer(props) {
 				{(function () {
 					if (props.coin === "BTC") {
 						return (
-							<div className="row">
-								<div className="col">
+							<div className="row mx-auto">
+								<div className="col d-flex justify-content-center ">
 									<CoinCard
 										exchange={"Binance"}
 										coin={props.coin}
 										prices={props.bitcoin_prices}
 									/>
 								</div>
-								<div className="col">
+								<div className="col d-flex justify-content-center">
 									<CoinCard
 										exchange={"KuCoin"}
 										coin={props.coin}
@@ -32,17 +32,21 @@ function ExchangeViewer(props) {
 												.Binance_bidPrice
 										) {
 											return (
-												<h1>
-													Sell on KuCoin for higher
-													Bid Price
-												</h1>
+												<div className="alert alert-info ">
+													<h1>
+														Sell on KuCoin for
+														higher Bid Price
+													</h1>
+												</div>
 											);
 										} else {
 											return (
-												<h1>
-													Sell on Binance for higher
-													Bid Price
-												</h1>
+												<div className="alert alert-info ">
+													<h1>
+														Sell on Binance for
+														higher Bid Price
+													</h1>
+												</div>
 											);
 										}
 									})()}
@@ -54,17 +58,21 @@ function ExchangeViewer(props) {
 												.Binance_askPrice
 										) {
 											return (
-												<h1>
-													Buy on KuCoin for lower Ask
-													Price
-												</h1>
+												<div className="alert alert-info">
+													<h1>
+														Buy on KuCoin for lower
+														Ask Price
+													</h1>
+												</div>
 											);
 										} else {
 											return (
-												<h1>
-													Buy on Binance for lower Ask
-													Price
-												</h1>
+												<div className="alert alert-info">
+													<h1>
+														Buy on Binance for lower
+														Ask Price
+													</h1>
+												</div>
 											);
 										}
 									})()}
@@ -73,15 +81,15 @@ function ExchangeViewer(props) {
 						);
 					} else {
 						return (
-							<div className="row">
-								<div className="col">
+							<div className="row mx-auto">
+								<div className="col d-flex justify-content-center ">
 									<CoinCard
 										exchange={"Binance"}
 										coin={props.coin}
 										prices={props.ethereum_prices}
 									/>
 								</div>
-								<div className="col">
+								<div className="col d-flex justify-content-center ">
 									<CoinCard
 										exchange={"KuCoin"}
 										coin={props.coin}
@@ -97,17 +105,21 @@ function ExchangeViewer(props) {
 												.Binance_bidPrice
 										) {
 											return (
-												<h1>
-													Sell on KuCoin for higher
-													Bid Price
-												</h1>
+												<div className="alert alert-info">
+													<h1>
+														Sell on KuCoin for
+														higher Bid Price
+													</h1>
+												</div>
 											);
 										} else {
 											return (
-												<h1>
-													Sell on Binance for higher
-													Bid Price
-												</h1>
+												<div className="alert alert-info">
+													<h1>
+														Sell on Binance for
+														higher Bid Price
+													</h1>
+												</div>
 											);
 										}
 									})()}
@@ -119,17 +131,21 @@ function ExchangeViewer(props) {
 												.Binance_askPrice
 										) {
 											return (
-												<h1>
-													Buy on KuCoin for lower Ask
-													Price
-												</h1>
+												<div className="alert alert-info">
+													<h1>
+														Buy on KuCoin for lower
+														Ask Price
+													</h1>
+												</div>
 											);
 										} else {
 											return (
-												<h1>
-													Buy on Binance for lower Ask
-													Price
-												</h1>
+												<div className="alert alert-info">
+													<h1>
+														Buy on Binance for lower
+														Ask Price
+													</h1>
+												</div>
 											);
 										}
 									})()}
